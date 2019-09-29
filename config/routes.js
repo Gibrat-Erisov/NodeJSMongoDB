@@ -1,6 +1,9 @@
 const products = require('../app/controllers/products');
 const auth = require('../app/controllers/auth')
 const company = require('../app/controllers/company')
+const data = require('../app/controllers/data')
+
+
 
 const authMiddleware = require('../app/middleware/auth')
 
@@ -19,4 +22,7 @@ module.exports = (app) => {
     app.post('/company', company.create)
     app.put('/company/:id', company.update)
     app.delete('/company/:id',company.remove)
+
+    //data
+    app.get('/data',data.getAll )
 }
